@@ -283,14 +283,42 @@
     </p>
     <form class="contact__form" action="#Postlinkwheretosend" method="POST">
         <input class="contact__form-name" name="name" placeholder="name">
+
+        <input class="contact_form-email" type="email" name="_replyto" placeholder="Email">
+
+        <textarea class="contact__form-message" name="message" placeholder="Message"></textarea>
+
+        <div class="contact__form-error-submit">
+            <div class="form-error__name">Please enter your name.</div>
+            <div class="form-error__email">Please enter your email.</div>
+            <div class="form-error__msg">Please enter a message</div>
+            <button type="button" class="contact__form-submit-2 project live_2" id="form-submit">"Submit"</button>
+        </div>
     </form>
-    
     <!-- Last Line of Section for Contact -->
 </section>
 
-
-
-
-    
+<footer class="footer">
+    <a href="#hero">
+        <div class="return-home">
+            <svg>Arrow that takes u back to top</svg>
+        </div>
+    </a>
+    <div class="socials">
+        <a class="#githubProfileLink">
+            <div class="socials_github">
+                <img> Github Logo
+            </div>
+        </a>
+    <a href="#emaillink">
+        <div class="socials__email">
+            <img> Email Logo Goes Here
+        </div>
+    </a>    
+    </div>
+    <p class="copyright">Michael Angel Cevallos (2024)</p>
+</footer>
+ 
 </body>
+
 </html>
