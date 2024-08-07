@@ -929,11 +929,11 @@ button {
     z-index: 99999999999
 }
 
-@media (max-width: 700px) {
+
     .navigation-bar {
         justify-content:center
     }
-}
+
 
 .navigation__item {
     transition: all 0.2s
