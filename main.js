@@ -1,19 +1,23 @@
-// Code to handle form 
+// Makes sure Javascript file is loaded
+console.log("Success! Your JS is loaded!")
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
 
-    const formData = new FormData(this);
+// Slider for pictures 
 
-    fetch('https://example.com/submit', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-});
+let currentSlide = 0;
+
+function moveSlide(direction) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+    const slideWidth = slides.children[0].clientWidth;
+    
+    currentSlide += direction;
+
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1; // wrap around to the last slide
+    } else if (currentSlide >= totalSlides) {
+        currentSlide = 0; // wrap around to the first slide
+    }
+
+    slides.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+}
