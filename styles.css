@@ -123,22 +123,20 @@ button {
     flex-direction: column;
     align-items: center;
     font-weight: 500;
-    left: -300px;
-    opacity: 0;
-    transition: all 1.1s
+    left: 0;
+    opacity: 1;
+    transition: all 1.1s;
 }
 
 @media (max-width: 1301px) {
     .profile {
         margin-bottom:10rem;
-        left: 0;
-        opacity: 1
     }
 }
 
 @media (max-width: 1000px) {
     .profile {
-        margin-bottom:7rem
+        margin-bottom:7rem;
     }
 }
 
