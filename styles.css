@@ -1382,3 +1382,100 @@ button {
     }
 }
 
+
+/* SLider Code Newley added */
+
+
+/* --- Slider base --- */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #0f0f10;
+  }
+  
+  /* Keep a nice aspect ratio; tweak as you like */
+  .slider::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* 16:9 */
+  }
+  
+  .slides {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    transition: transform 300ms ease;
+  }
+  
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    display: none;                /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    background: #0f0f10;
+  }
+  
+  .slide.is-active {
+    display: flex;                /* show only the active slide */
+  }
+  
+  .slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  
+  /* Buttons */
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.25);
+    background: rgba(0,0,0,.35);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    z-index: 3;
+  }
+  
+  .slider-btn:hover { background: rgba(0,0,0,.55); }
+  .slider-btn.prev { left: 10px; }
+  .slider-btn.next { right: 10px; }
+  
+  /* Dots */
+  .slider-dots {
+    position: absolute;
+    left: 0; right: 0; bottom: 10px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    z-index: 3;
+  }
+  
+  .slider-dots .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.6);
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .slider-dots .dot.is-active {
+    background: #ff4d5a;  /* your accent color */
+    border-color: #ff4d5a;
+  }
+  
+  /* Make sure container stays responsive across your existing sizes */
+  .project__image-image { width: 100%; }
+  .project__image-image img { width: 100%; }
