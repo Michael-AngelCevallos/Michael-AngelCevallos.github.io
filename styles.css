@@ -205,7 +205,7 @@ button {
 }
 
 .skills__item {
-    opacity: 0;
+    opacity: 1;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -227,21 +227,20 @@ button {
 @media (max-width: 1500px) {
     .skills__item {
         height:90px;
-        width: 145px
+        width: 145px;
     }
 }
 
 @media (max-width: 1300px) {
     .skills__item {
-        opacity:1;
-        border-width: 2px
+        border-width: 2px;
     }
 }
 
 @media (max-width: 1000px) {
     .skills__item {
         height:80px;
-        width: 130px
+        width: 130px;
     }
 }
 
