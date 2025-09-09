@@ -27,7 +27,7 @@ button{border:none;outline:none;background:transparent;color:inherit}
 @media (max-width:1000px){.profile{margin-bottom:7rem}}
 .profile__picture{height:24rem;margin-bottom:4rem;display:flex;justify-content:flex-start;align-items:center}
 .profile__picture svg{transition:all 1.1s}
-.profile__blurb{font-size:1.8rem;width:500px;line-height:1.8;margin: 0 0 2rem;} /*ADDS SPACE TO BOTTOM OF ABOUT ME */
+.profile__blurb{font-size:1.8rem;width:700px;line-height:1.8;margin: 0 0 2rem;} /*ADDS SPACE TO BOTTOM OF ABOUT ME */
 @media (max-width:600px){.profile__blurb{width:80vw;margin-inline:auto}}
 
 .skills{display:flex;justify-content:center}
