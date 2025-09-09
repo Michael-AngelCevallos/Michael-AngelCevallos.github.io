@@ -1390,16 +1390,14 @@ button {
     position:relative;
     width:100%;
     height: 100%;
-    /* overflow:hidden; */
+    overflow:hidden;
     border-radius:12px;
     background:#0f0f10;
   }
   
   /* keep the aspect ratio */
   .slider::before{
-    content:"";
-    display:block;
-    padding-top:56.25%; /* 16:9 */
+    content: none;
   }
   
   /* slides track */
@@ -1410,10 +1408,18 @@ button {
   
   /* EACH slide takes full frame */
   .slide{
-    min-width:100%;
+    position:absolute;
+    inset:0;
     display:flex;
+    justify-content:center;
     align-items:center;
-    justify-content:center
+    opacity:0;                  /* hidden by default */
+    pointer-events:none;
+    transition:opacity .25s ease;
+    z-index:1;
+    will-change: opacity;       /* smoother on Chrome */
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
   
   .slide img{
@@ -1423,9 +1429,10 @@ button {
   }
 
   .slide.is-active{
-    opacity:1;
-    pointer-events:auto;
-    z-index:2;
+    width:100%;
+    height:100%;
+    object-fit:contain;         /* or 'cover' if you want edge-to-edge */
+    display:block;      
   }
   
   /* Buttons */
