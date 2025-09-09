@@ -993,8 +993,8 @@ button {
 }
 
 .project__image-container {
-    width: auto !important;
-    height: auto !important;
+    /* width: auto !important;
+    height: auto !important; */
   
     flex: 1 1 60%;
     aspect-ratio: 16 / 9;    /* consistent frame */
