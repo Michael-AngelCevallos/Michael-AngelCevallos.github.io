@@ -978,7 +978,7 @@ button {
     position: relative;
     display: flex;
     margin-bottom: 14rem;
-    justify-content: flex-start
+    justify-content: flex-start;
 }
 
 @media (max-width: 560px) {
@@ -1268,12 +1268,12 @@ button {
     }
 }
 
-.project-left .project__info {
+/* .project-left .project__info {
     left: -8rem;
     margin-right: -2rem
-}
+} */
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .project-left .project__info {
         margin-right:-4rem
     }
@@ -1296,7 +1296,7 @@ button {
         left:-10rem;
         margin-right: -7rem
     }
-}
+} */
 
 .project-right {
     align-self: flex-end;
