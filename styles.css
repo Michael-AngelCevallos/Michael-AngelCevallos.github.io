@@ -1402,13 +1402,11 @@ button {
   /* slides track */
   .slides{
     position:absolute;
-    inset:0;
   }
   
   /* EACH slide takes full frame */
   .slide{
     position:absolute;
-    inset:0;
     display:flex;
     justify-content:center;
     align-items:center;
