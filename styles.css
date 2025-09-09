@@ -998,7 +998,7 @@ button {
   
     flex: 1 1 60%;
     aspect-ratio: 16 / 9;    /* consistent frame */
-    background: transparent;
+    /* background: transparent; */
     padding: 8px;
     box-shadow: 0 0 0 2px #3216bb;
     border-radius: 12px;
@@ -1394,11 +1394,11 @@ button {
     border-radius:12px;
   }
   
-  /* keep the aspect ratio */
+  /* keep the aspect ratio
   .slider::before{
     content: none;
   }
-  
+   */
   /* slides track */
   .slides{
     position:absolute;
