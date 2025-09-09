@@ -975,10 +975,9 @@ button {
 }
 
 .project{
-    position: relative;
-    display: flex;
-    margin-bottom: 14rem;
-    justify-content: flex-start;
+    display:flex;
+    align-items:center;      /* vertical align */
+    gap: 4rem;
 }
 
 @media (max-width: 560px) {
@@ -994,12 +993,14 @@ button {
 }
 
 .project__image-container {
-    background: transparent;   /* hide solid purple */
-    padding: 8px;              /* tiny frame */
-    width: auto;               /* no fixed width */
-    height: auto;              /* no fixed height */
+    width: auto !important;
+    height: auto !important;
+  
     flex: 1 1 60%;
-    box-shadow: 0 0 0 2px #3216bb;   /* subtle purple accent */
+    aspect-ratio: 16 / 9;    /* consistent frame */
+    background: transparent;
+    padding: 8px;
+    box-shadow: 0 0 0 2px #3216bb;
     border-radius: 12px;
 }
 
@@ -1061,10 +1062,9 @@ button {
 
 .project__info {
     position: relative;
-    top: 8rem;
-    height: fit-content;
+    top: 0;                  /* remove manual offset */
+    flex: 1 1 40%;
     padding: 1rem;
-    z-index: 9999999
 }
 
 @media (max-width: 1000px) {
@@ -1254,7 +1254,7 @@ button {
 
 .project-left {
     align-self: flex-start;
-    margin-left: 22rem
+    margin-left: 22rem;
 }
 
 @media (max-width: 1700px) {
@@ -1419,7 +1419,7 @@ button {
   .slide img{
     max-width:100%;
     max-height:100%;
-    object-fit:cover;
+    object-fit: contain;
   }
 
   .slide.is-active{
@@ -1453,5 +1453,5 @@ button {
   
   
   /* Make sure container stays responsive across your existing sizes */
-  .project__image-image { width: 100%; height: 100%; }
+  .project__image-image { width: 100%; height: 100%; position: relative;}
   .project__image-image img { width: 100%; }
