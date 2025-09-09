@@ -1,30 +1,42 @@
-// Makes sure Javascript file is loaded
-// console.log("Success! Your JS is loaded!");
-
 // Slider logic (translateX)
 (function () {
   function makeSlider(root) {
-    const track = root.querySelector(".slides");       // the moving container
+    const track = root.querySelector(".slides");
     const slides = Array.from(root.querySelectorAll(".slide"));
     const prevBtn = root.querySelector(".prev");
     const nextBtn = root.querySelector(".next");
-    const dots = Array.from(root.querySelectorAll(".dot"));
+    const dotsWrap = root.querySelector(".slider-dots");
+
+    // Build dots dynamically
+    dotsWrap.innerHTML = "";
+    const dots = slides.map((_, i) => {
+      const b = document.createElement("button");
+      b.className = "dot";
+      b.type = "button";
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      b.tabIndex = i === 0 ? 0 : -1;
+      dotsWrap.appendChild(b);
+      return b;
+    });
+
     let index = 0;
 
+    // set track width implicitly by flex; just move it
     function go(i) {
       index = (i + slides.length) % slides.length;
-      // move the track
       track.style.transform = `translateX(${-index * 100}%)`;
-      // dot states
+
       dots.forEach((d, idx) => {
-        d.classList.toggle("is-active", idx === index);
-        d.setAttribute("aria-selected", idx === index ? "true" : "false");
-        d.tabIndex = idx === index ? 0 : -1;
+        const active = idx === index;
+        d.classList.toggle("is-active", active);
+        d.setAttribute("aria-selected", active ? "true" : "false");
+        d.tabIndex = active ? 0 : -1;
       });
     }
 
-    function next(){ go(index + 1); }
-    function prev(){ go(index - 1); }
+    const next = () => go(index + 1);
+    const prev = () => go(index - 1);
 
     // Buttons
     if (nextBtn) nextBtn.addEventListener("click", next);
@@ -37,18 +49,28 @@
     root.setAttribute("tabindex", "0");
     root.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") next();
-      if (e.key === "ArrowLeft")  prev();
+      if (e.key === "ArrowLeft") prev();
     });
 
     // Touch swipe
     let startX = 0;
-    root.addEventListener("touchstart", (e) => { startX = e.changedTouches[0].clientX; }, { passive: true });
-    root.addEventListener("touchend",   (e) => {
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) (dx < 0 ? next() : prev());
-    });
+    root.addEventListener(
+      "touchstart",
+      (e) => {
+        startX = e.changedTouches[0].clientX;
+      },
+      { passive: true }
+    );
+    root.addEventListener(
+      "touchend",
+      (e) => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) (dx < 0 ? next() : prev());
+      },
+      { passive: true }
+    );
 
-    // Init at first slide
+    // Init
     go(0);
   }
 
