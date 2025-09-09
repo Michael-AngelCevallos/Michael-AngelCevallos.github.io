@@ -1408,11 +1408,16 @@ button {
   
   /* EACH slide takes full frame */
   .slide{
-    position: absolute; 
-    inset: 0; 
-    justify-content: center; 
-    align-items: center; 
-    will-change: opacity;
+    position:absolute;
+    inset:0;
+    opacity:0;                 /* hidden by default */
+    pointer-events:none;       /* not clickable */
+    transition:opacity .25s ease;
+    display:flex;              /* keep layout stable */
+    justify-content:center;
+    align-items:center;
+    background:transparent;    /* just in case */
+    z-index:1;
 }
   
   .slide img{
@@ -1423,7 +1428,9 @@ button {
   }
 
   .slide.is-active{
-    display: flex;
+    opacity:1;
+    pointer-events:auto;
+    z-index:2;
   }
   
   /* Buttons */
