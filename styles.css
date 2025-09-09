@@ -994,12 +994,13 @@ button {
 }
 
 .project__image-container {
-    position: relative;
-    height: 70rem;
-    width: 100rem;
-    background-color: #3216bb;
-    transition: all 0.2s;
-    cursor: pointer
+    background: transparent;   /* hide solid purple */
+    padding: 8px;              /* tiny frame */
+    width: auto;               /* no fixed width */
+    height: auto;              /* no fixed height */
+    flex: 1 1 60%;
+    box-shadow: 0 0 0 2px #3216bb;   /* subtle purple accent */
+    border-radius: 12px;
 }
 
 @media (max-width: 1100px) {
@@ -1049,11 +1050,11 @@ button {
 }
 
 .project__image-image {
-    width: 85%;
-    position: relative
+    width: 100%;
+    position: relative;
 }
 
-.project__image-image img {
+.project__image-image{
     width: 100%
 }
 
