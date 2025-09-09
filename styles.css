@@ -1410,11 +1410,11 @@ button {
     display:flex;
     justify-content:center;
     align-items:center;
-    opacity:0;                  /* hidden by default */
+    /* opacity:0;                  hidden by default */
     pointer-events:none;
     transition:opacity .25s ease;
     z-index:1;
-    will-change: opacity;       /* smoother on Chrome */
+    /* will-change: opacity;       smoother on Chrome */
     backface-visibility: hidden;
     transform: translateZ(0);
 }
