@@ -1436,7 +1436,7 @@ button {
     background:rgba(0,0,0,.35);color:#fff;font-size:22px;
     display:grid;place-items:center;cursor:pointer;z-index:3;
   }
-  .slider-btn:hover{ background:rgba(0,0,0,.55); }
+  
   .slider-btn.prev{ left:10px; }
   .slider-btn.next{ right:10px; }
   
